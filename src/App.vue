@@ -2,6 +2,9 @@
   <div id="app">
     <TwitterInput/>
     <PasswordInput/>
+    <div>
+    	{{name  | reverse | allCaps }}
+    </div>
     <app-test>
     	<!-- <p>This goes into slot</p>
     	<div>
@@ -32,6 +35,34 @@ export default {
     TwitterInput,
     PasswordInput,
     AppTest,
+  },
+
+  data(){
+  	return {
+  		name: 'Aleksandra',
+  		lastName: 'Aleksandrovic'
+  	}
+  },
+
+  filters: {
+  	allCaps(value){
+  		if(!value){
+  			return
+  		}
+  		return value.toString().toUpperCase()
+  	},
+
+  	reverse(value){
+
+
+  		return value.split("").reverse().join("")
+  	},
+
+  	// join(value, arg1 , arg2) {
+
+  	// 	return '${value}+${arg1}+${arg2}'
+  	// }
+
   }
 
 
