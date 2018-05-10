@@ -16,7 +16,7 @@
 				password: '',
 				isWeak: true
 			}
-		},
+		},	
 
 		computed: {
 
